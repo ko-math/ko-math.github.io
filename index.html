@@ -4,6 +4,33 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <script src="./practice.js"></script>
+    <pre>
+        <code>
+            javascript:(async () => {
+              const u = location.pathname.split("/")[2];
+            
+              if (!u) {
+                alert("ユーザー名が取得できません");
+                return;
+              }
+            
+              const r = await fetch("https://api.scratch.mit.edu/users/" + u);
+              const d = await r.json();
+            
+              const el = document.querySelector('.header-text .profile-details');
+            
+              if (!el) {
+                alert("表示エリアが見つかりません");
+                return;
+              }
+            
+              const current = document.createElement('span');
+              current.textContent = `UserID: ${d.id}`;
+              current.style.color = "#888";
+            
+              el.appendChild(current);
+            })();
+        </code>
+    </pre>
 </body>
 </html>
