@@ -41,7 +41,53 @@ if(url.includes('scratch.mit.edu')){
         })();
     }
     const message = true;
-    /*
+    (() => {
+      if (document.getElementById('scratch_box')) return;
+    
+      const box = document.createElement('div');
+      box.id = 'scratch_box';
+      box.style.position = 'fixed';
+      box.style.top = '50px';
+      box.style.right = '20px';
+      box.style.padding = '10px';
+      box.style.background = 'rgba(0,0,0,0.8)';
+      box.style.color = '#fff';
+      box.style.zIndex = 999999;
+      box.style.borderRadius = '10px';
+      box.style.fontFamily = 'monospace';
+    
+      const input = document.createElement('input');
+      input.placeholder = 'Scratch username';
+      input.style.width = '150px';
+    
+      const btn = document.createElement('button');
+      btn.textContent = 'Get';
+      btn.style.marginLeft = '5px';
+    
+      const result = document.createElement('div');
+      result.style.marginTop = '8px';
+    
+      btn.onclick = async () => {
+        const name = input.value.trim();
+        if (!name) return;
+    
+        result.textContent = 'loading...';
+    
+        try {
+          const res = await fetch(`https://api.scratch.mit.edu/users/${name}/messages/count`);
+          const data = await res.json();
+          result.textContent = `Messages: ${data.count}`;
+        } catch (e) {
+          result.textContent = 'error';
+        }
+      };
+    
+      box.appendChild(input);
+      box.appendChild(btn);
+      box.appendChild(result);
+      document.body.appendChild(box);
+    })();
+        /*
     if(message){
         (() => {
             let el = document.createElement('button');
