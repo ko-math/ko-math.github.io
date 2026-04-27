@@ -41,17 +41,32 @@ if(url.includes('scratch.mit.edu')){
         })();
     }
     const message = true;
+    /*
     if(message){
         (() => {
             let el = document.createElement('button');
             el.style.position = 'fixed';
-            el.style.top = '100px';
-            el.style.right = '100px';
-            el.style.width = '100px';
+            el.style.top = '50px';
+            el.style.right = '25px';
+            el.style.width = '75px';
             el.style.height = '50px';
+            el.style.opacity = '0.75';
+            el.style.color = '#000000';
             el.style.borderRadius = '15px';
+            el.id = 'SUmessageButton';
+            document.body.append(el);
+            el = document.createElement('script');
+            el.textContent = `
+                const button = document.querySelector('#SUmessageButton');
+                button.addEventListener('click',async function(){
+                    //let i = document.createElement('input');document.body.append(i);
+                    alert(await fetch('https://api.scratch.mit.edu/users/ko-math/messages/count'));
+                });
+            `;
+            document.body.append(el);
         })();
     }
+    */
 } else {
     alert('Scratchで開いてください');
 }
