@@ -41,6 +41,7 @@ if(url.includes('scratch.mit.edu')){
         })();
     }
     const message = true;
+    /*
     (() => {
       if (document.getElementById('scratch_box')) return;
     
@@ -87,7 +88,7 @@ if(url.includes('scratch.mit.edu')){
       box.appendChild(result);
       document.body.appendChild(box);
     })();
-        /*
+    
     if(message){
         (() => {
             let el = document.createElement('button');
