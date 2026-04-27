@@ -3,6 +3,15 @@
 <head>
     <title>ScratchUtil</title>
     <meta charset="utf-8">
+    <style>
+        .copyButton{
+            position:relative;
+            left:30px;
+            border-radius:10px;
+            width:50px;
+            height:25px;
+        }
+    </style>
 </head>
 <body>
     <p>このページをブックマークに追加して,リンクを</p>
@@ -58,7 +67,7 @@
             </code>
         </pre>
     </div>
-    <button onclick="copy()">Copy</button>
+    <button onclick="copy()" id="copyButton">Copy</button>
     <p>に変更。自分で作るなら</p>
     <pre>
         <code>
@@ -72,6 +81,6 @@
             const oneLine = code.replace(/\s+/g, ' ').trim();
             navigator.clipboard.writeText(oneLine);
         }
-</script>
+    </script>
 </body>
 </html>
