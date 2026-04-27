@@ -68,10 +68,10 @@
     <p>という感じにしてください。iPadならスマート句読点はオフにしてください。</p>
     <script>
         function copy(){
-            const copyTextParagraph = document.querySelector('#copy');
-            const copyText = copyTextParagraph.textContent;
-            navigator.clipboard.writeText(copyText);
+            const code = document.querySelector('#copy').textContent;
+            const oneLine = code.replace(/\s+/g, ' ').trim();
+            navigator.clipboard.writeText(oneLine);
         }
-    </script>
+</script>
 </body>
 </html>
