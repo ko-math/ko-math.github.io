@@ -42,27 +42,25 @@ if(url.includes('scratch.mit.edu')){
     }
     if(url.includes('search')){
         (() => {
-            if (!location.href.includes('scratch.mit.edu/search')){
-                const tabs = document.querySelector('[role="tablist"]');
-                const input = document.querySelector('#frc-q-1088');
-                const search = input.value;
-                const el = document.createElement('a');
-                el.href = `https://scratch.mit.edu/users/${search}/`;
-                tabs.append(el);
-                fetch("https://api.scratch.mit.edu/users/" + search)
-                .then(r => r.json())
-                .then(d => {
-                    const img = document.createElement('img');
-                    img.src = d.profile.images["90x90"];
-                    img.style.width = "55px";
-                    img.style.position = 'relative';
-                    img.style.top = '10px';
-                    img.style.verticalAlign = "middle";
-                    el.append(img);
-                }).catch(() => {
-                    el.textContent += "(ユーザーなし)";
-                });
-            }
+            const tabs = document.querySelector('[role="tablist"]');
+            const input = document.querySelector('#frc-q-1088');
+            const search = input.value;
+            const el = document.createElement('a');
+            el.href = `https://scratch.mit.edu/users/${search}/`;
+            tabs.append(el);
+            fetch("https://api.scratch.mit.edu/users/" + search)
+            .then(r => r.json())
+            .then(d => {
+                const img = document.createElement('img');
+                img.src = d.profile.images["90x90"];
+                img.style.width = "55px";
+                img.style.position = 'relative';
+                img.style.top = '10px';
+                img.style.verticalAlign = "middle";
+                el.append(img);
+            }).catch(() => {
+                el.textContent += "(ユーザーなし)";
+            });
         })();
     }
     const message = true;
