@@ -1,6 +1,6 @@
 const url = location.href;
 if(url.includes('scratch.mit.edu')){
-    if(url.includes('users')){
+    if(url.includes('/users/')){
         (async () => {
           if(!(document.querySelector('#SUuserID'))){
               const u = location.pathname.split("/")[2];
@@ -17,7 +17,7 @@ if(url.includes('scratch.mit.edu')){
             }
         })();
     }
-    if(url.includes('projects')){
+    if(url.includes('/projects/')){
         (() => {
             if(!(document.querySelector('#SUTurbutton'))){
               const a = document.createElement('a');
@@ -40,7 +40,7 @@ if(url.includes('scratch.mit.edu')){
             }
         })();
     }
-    if(url.includes('search')){
+    if(url.includes('/search/')){
         (() => {
             const tabs = document.querySelector('[role="tablist"]');
             const input = document.querySelector('#frc-q-1088');
