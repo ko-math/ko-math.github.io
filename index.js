@@ -1,8 +1,10 @@
 const MAX = 5;
 const theadData = ['n','2^n-1の個数','数列','最大値'];
+const max_at_all = 1;
 const data = [];
 for(let i = 1;i <= MAX;i++){
-  data.push(col(i));
+  const res = col(i);
+  data.push(res);
 }
 const table = document.createElement('table');
 const thead = document.createElement('thead');
@@ -27,7 +29,7 @@ table.append(tbody);
 document.querySelector('#el').append(table);
 
 
-function col(n){
+function col(n,max_at_all){
   let i = n;
   if(i === 1)return [1,0,1,1];//[n,2^i-1_count,sq,max]
   const sq = [];
@@ -44,5 +46,14 @@ function col(n){
     }
   }
   sq.push(1);
+  /*
+  let maxa;
+  if(max_at_all > max){
+    maxa = max_at_all;
+  } else {
+    maxa = max;
+  }
+  return [n,two,sq,max,maxa];
+  */
   return [n,two,sq,max];
 }
