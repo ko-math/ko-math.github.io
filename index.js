@@ -9,9 +9,11 @@ for(let i = 275;i<= MAX;i++){
 }
 /*
 let i = 10000;
-while(res[1] !== 3){
+let ch2 = 0;
+while(ch2 !== 2){
   res = col(i);
   data.push(res);
+  if(res[2] === 2)ch2++;
   i++;
 }
 */
