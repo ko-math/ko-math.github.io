@@ -4,7 +4,7 @@ const max_at_all = 1;
 const data = [];
 let res = [];
 let i = 1;
-while(res[1] !== 2){
+while(res[1] !== 3){
   res = col(i);
   data.push(res);
   i++;
