@@ -2,9 +2,9 @@ table {
   border-collapse: collapse;
 }
 tr{
-  border: 1px solid;
+  border: 1px solid #3c3c3c;
 }
 th,td {
-  border: 1px solid;
+  border: 1px solid #3c3c3c;
   padding: 10px;
 }
