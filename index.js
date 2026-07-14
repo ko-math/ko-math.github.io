@@ -11,7 +11,7 @@ function col(n){
   const two = 0;
   const sq = [];
   let max = i;
-  while(i < n){
+  while(i !== 1){
     sq.push(i);
     if(Math.ceil(Math.log2(i + 1)) === Math.log2(i + 1)two++;
     if(i > max)max = i;
