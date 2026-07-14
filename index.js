@@ -2,8 +2,9 @@ const MAX = 100;
 const theadData = ['n','2^n-1の個数','数列','最大値'];
 const max_at_all = 1;
 const data = [];
-for(let i = 1;i <= MAX;i++){
-  const res = col(i);
+let res = [];
+while(res[1] !== 2){
+  res = col(i);
   data.push(res);
 }
 const table = document.createElement('table');
